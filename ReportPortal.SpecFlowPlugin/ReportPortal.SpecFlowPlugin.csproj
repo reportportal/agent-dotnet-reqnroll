@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net45</TargetFramework>
+    <TargetFrameworks>net461;netstandard2.0;</TargetFrameworks>
     <PackageId>ReportPortal.SpecFlow</PackageId>
     <Version>1.0.0</Version>
     <Description>SpecFlow plugin for reporting test results into ReportPortal</Description>
@@ -25,12 +25,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="ReportPortal.Shared" Version="2.1.0" />
-    <PackageReference Include="SpecFlow.CustomPlugin" Version="2.4.0" />
+    <PackageReference Include="ReportPortal.Shared" Version="2.1.1">
+      <PrivateAssets>contentfiles;analyzers;</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="SpecFlow.CustomPlugin" Version="3.0.161-beta" />
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="System.Configuration" />
+    <None Include="Build\**" Pack="true" PackagePath="build\" />
   </ItemGroup>
 
 </Project>
