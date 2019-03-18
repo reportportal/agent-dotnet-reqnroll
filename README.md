@@ -1,11 +1,21 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/k9gnrmlt3yo5gl4g?svg=true)](https://ci.appveyor.com/project/nvborisenko/agent-net-specflow)
 
 # Installation
-Install **ReportPortal.SpecFlow** NuGet package into your project with scenarios. This package depends on SpecFlow v3.
+Install **ReportPortal.SpecFlow** NuGet package into your project with scenarios.
 
 [![NuGet version](https://badge.fury.io/nu/reportportal.specflow.svg)](https://badge.fury.io/nu/reportportal.specflow)
 
 > PS> Install-Package ReportPortal.SpecFlow
+
+Connect plugin via your `App.config` file.
+```xml
+<specFlow>
+  ...
+  <plugins>
+    <add name="ReportPortal" type="Runtime" />
+  </plugins>
+</specFlow>
+```
 
 # Configuration
 Add `ReportPortal.config.json` file into tests project with `Copy to Output Directory = Copy if newer` property.
@@ -31,9 +41,6 @@ Example of config file:
 }
 ```
 
-
-# How To
-
 ## Combine several execution in one launch
 
 How it can be done:
@@ -54,7 +61,11 @@ The following code defines a handler for `Initializing` event that provides `Ser
 ```c#
   private static void ReportPortalAddin_Initializing(object sender, InitializingEventArgs e)
   {
-    e.Service = new Service(e.Config.Server.Url, e.Config.Server.Project, e.Config.Server.Authentication.Uuid, new CustomHttpClientHandler());
+		e.Service = new Service(
+			new Uri(e.Config.GetValue<string>(ConfigurationPath.ServerUrl)),
+			e.Config.GetValue<string>(ConfigurationPath.ServerProject),
+			e.Config.GetValue<string>(ConfigurationPath.ServerAuthenticationUuid),
+			new CustomHttpClientHandler());
   }
 ```
 
