@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <PropertyGroup>
+
+    <_ReportPortal_Reqnroll_Runtime_Path Condition=" $(_ReportPortal_Reqnroll_Runtime) != '' ">$(MSBuildThisFileDirectory)..\..\lib\netstandard2.0\ReportPortal.ReqnrollPlugin.dll</_ReportPortal_Reqnroll_Runtime_Path>
+      <_ReportPortal_Reqnroll_Runtime_Pdb_Path Condition=" $(_ReportPortal_Reqnroll_Runtime) != '' ">$(MSBuildThisFileDirectory)..\..\lib\netstandard2.0\ReportPortal.ReqnrollPlugin.pdb</_ReportPortal_Reqnroll_Runtime_Pdb_Path>
+
+  </PropertyGroup>
+
+</Project>

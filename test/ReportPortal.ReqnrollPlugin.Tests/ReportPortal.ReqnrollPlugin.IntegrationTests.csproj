@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\ReportPortal.SpecFlowPlugin\ReportPortal.SpecFlowPlugin.csproj" />
+    <ProjectReference Include="..\..\src\ReportPortal.ReqnrollPlugin\ReportPortal.ReqnrollPlugin.csproj" />
   </ItemGroup>
 
   <ItemGroup>
