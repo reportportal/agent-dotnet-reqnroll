@@ -1,10 +1,10 @@
-﻿using System;
+﻿using Reqnroll;
+using Reqnroll.UnitTestProvider;
+using System;
 using System.IO;
 using System.Reflection;
-using TechTalk.SpecFlow;
-using TechTalk.SpecFlow.UnitTestProvider;
 
-namespace ReportPortal.SpecFlowPlugin.IntegrationTests
+namespace ReportPortal.ReqnrollPlugin.IntegrationTests
 {
     [Binding]
     public sealed class Hooks
