@@ -3,7 +3,7 @@ using ReportPortal.Client.Abstractions;
 using ReportPortal.Client.Abstractions.Requests;
 using ReportPortal.Shared.Reporter;
 
-namespace ReportPortal.SpecFlowPlugin.EventArguments
+namespace ReportPortal.ReqnrollPlugin.EventArguments
 {
     public class RunFinishedEventArgs : EventArgs
     {

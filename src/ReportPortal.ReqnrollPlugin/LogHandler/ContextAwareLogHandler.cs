@@ -5,11 +5,11 @@ using ReportPortal.Shared.Extensibility;
 using ReportPortal.Shared.Extensibility.Commands;
 using ReportPortal.Shared.Internal.Logging;
 using ReportPortal.Shared.Reporter;
+using Reqnroll;
 using System.Collections.Generic;
 using System.Threading;
-using TechTalk.SpecFlow;
 
-namespace ReportPortal.SpecFlowPlugin.LogHandler
+namespace ReportPortal.ReqnrollPlugin.LogHandler
 {
     public class ContextAwareLogHandler : ICommandsListener
     {
@@ -34,7 +34,7 @@ namespace ReportPortal.SpecFlowPlugin.LogHandler
             }
             else
             {
-                // TODO: investigate SpecFlow how to understand current scenario context
+                // TODO: investigate Reqnroll how to understand current scenario context
                 testReporter = GetCurrentTestReporter();
             }
 

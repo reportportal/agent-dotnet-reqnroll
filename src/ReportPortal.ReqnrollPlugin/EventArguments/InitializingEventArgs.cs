@@ -1,7 +1,7 @@
 ﻿using ReportPortal.Client.Abstractions;
 using ReportPortal.Shared.Configuration;
 
-namespace ReportPortal.SpecFlowPlugin.EventArguments
+namespace ReportPortal.ReqnrollPlugin.EventArguments
 {
     public class InitializingEventArgs
     {

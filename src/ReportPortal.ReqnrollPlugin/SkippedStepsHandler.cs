@@ -1,13 +1,9 @@
-﻿using ReportPortal.SpecFlowPlugin.Extensions;
+﻿using ReportPortal.ReqnrollPlugin.Extensions;
+using Reqnroll;
+using Reqnroll.Infrastructure;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TechTalk.SpecFlow;
-using TechTalk.SpecFlow.Infrastructure;
 
-namespace ReportPortal.SpecFlowPlugin
+namespace ReportPortal.ReqnrollPlugin
 {
     public class SkippedStepsHandler : ISkippedStepHandler
     {

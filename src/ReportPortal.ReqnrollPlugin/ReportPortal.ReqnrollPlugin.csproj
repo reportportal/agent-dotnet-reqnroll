@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFrameworks>net462;netstandard2.0;</TargetFrameworks>
     <PackageId>ReportPortal.Reqnroll</PackageId>
-    
+
     <Description>Reqnroll plugin for reporting test results to https://reportportal.io</Description>
     <Authors>Nikolay Borisenko, Report Portal Community</Authors>
     <PackageTags>report reqnroll plugin reportportal testing</PackageTags>
@@ -22,10 +22,10 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="ReportPortal.Shared" Version="3.6.0">
+    <PackageReference Include="ReportPortal.Shared" Version="3.6.2">
       <PrivateAssets>contentfiles;analyzers;</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="SpecFlow" Version="3.7.13" />
+    <PackageReference Include="Reqnroll" Version="1.0.0" />
   </ItemGroup>
 
   <ItemGroup>

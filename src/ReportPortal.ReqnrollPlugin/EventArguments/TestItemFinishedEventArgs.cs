@@ -1,13 +1,12 @@
 ﻿using System;
-using ReportPortal.Client;
 using ReportPortal.Client.Abstractions;
 using ReportPortal.Client.Abstractions.Requests;
 using ReportPortal.Shared.Reporter;
-using TechTalk.SpecFlow;
+using Reqnroll;
 
-namespace ReportPortal.SpecFlowPlugin.EventArguments
+namespace ReportPortal.ReqnrollPlugin.EventArguments
 {
-    public class TestItemFinishedEventArgs: EventArgs
+    public class TestItemFinishedEventArgs : EventArgs
     {
         public TestItemFinishedEventArgs(IClientService service, FinishTestItemRequest request, ITestReporter testReporter)
         {

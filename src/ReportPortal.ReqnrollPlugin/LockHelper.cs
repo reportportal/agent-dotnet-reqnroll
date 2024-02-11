@@ -1,6 +1,6 @@
 ﻿using System.Collections.Concurrent;
 
-namespace ReportPortal.SpecFlowPlugin
+namespace ReportPortal.ReqnrollPlugin
 {
     internal static class LockHelper
     {
