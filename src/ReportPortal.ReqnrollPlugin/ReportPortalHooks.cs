@@ -60,7 +60,7 @@ namespace ReportPortal.ReqnrollPlugin
 
                 if (!eventArg.Canceled)
                 {
-                    Shared.Extensibility.Embedded.Analytics.AnalyticsReportEventsObserver.DefineConsumer("agent-dotnet-specflow");
+                    Shared.Extensibility.Embedded.Analytics.AnalyticsReportEventsObserver.DefineConsumer("agent-dotnet-reqnroll");
 
                     _launchReporter = _launchReporter ?? new LaunchReporter(_service, config, null, Shared.Extensibility.ExtensionManager.Instance);
 
