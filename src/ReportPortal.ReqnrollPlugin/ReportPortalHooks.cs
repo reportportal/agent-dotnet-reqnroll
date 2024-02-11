@@ -13,12 +13,12 @@ using ReportPortal.Shared.Configuration;
 using ReportPortal.Shared.Converters;
 using ReportPortal.Shared.Internal.Logging;
 using ReportPortal.Shared.Reporter;
-using ReportPortal.SpecFlowPlugin.EventArguments;
-using ReportPortal.SpecFlowPlugin.Extensions;
-using ReportPortal.SpecFlowPlugin.LogHandler;
-using TechTalk.SpecFlow;
+using ReportPortal.ReqnrollPlugin.EventArguments;
+using ReportPortal.ReqnrollPlugin.Extensions;
+using ReportPortal.ReqnrollPlugin.LogHandler;
+using Reqnroll;
 
-namespace ReportPortal.SpecFlowPlugin
+namespace ReportPortal.ReqnrollPlugin
 {
     [Binding]
     internal class ReportPortalHooks
@@ -38,7 +38,7 @@ namespace ReportPortal.SpecFlowPlugin
 
                 var request = new StartLaunchRequest
                 {
-                    Name = config.GetValue(ConfigurationPath.LaunchName, "SpecFlow Launch"),
+                    Name = config.GetValue(ConfigurationPath.LaunchName, "Reqnroll Launch"),
                     StartTime = DateTime.UtcNow
                 };
 

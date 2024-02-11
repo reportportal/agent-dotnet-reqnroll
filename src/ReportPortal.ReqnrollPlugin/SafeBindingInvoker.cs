@@ -1,19 +1,19 @@
-﻿using System;
+﻿using Reqnroll;
+using Reqnroll.Bindings;
+using Reqnroll.Configuration;
+using Reqnroll.ErrorHandling;
+using Reqnroll.Infrastructure;
+using Reqnroll.Tracing;
+using System;
 using System.Diagnostics;
 using System.Reflection;
-using TechTalk.SpecFlow;
-using TechTalk.SpecFlow.Bindings;
-using TechTalk.SpecFlow.Configuration;
-using TechTalk.SpecFlow.ErrorHandling;
-using TechTalk.SpecFlow.Infrastructure;
-using TechTalk.SpecFlow.Tracing;
 
-namespace ReportPortal.SpecFlowPlugin
+namespace ReportPortal.ReqnrollPlugin
 {
     internal class SafeBindingInvoker : BindingInvoker
     {
-        public SafeBindingInvoker(SpecFlowConfiguration specFlowConfiguration, IErrorProvider errorProvider, ISynchronousBindingDelegateInvoker synchronousBindingDelegateInvoker)
-            : base(specFlowConfiguration, errorProvider, synchronousBindingDelegateInvoker)
+        public SafeBindingInvoker(ReqnrollConfiguration specFlowConfiguration, IErrorProvider errorProvider, IBindingDelegateInvoker bindingDelegateInvoker)
+            : base(specFlowConfiguration, errorProvider, bindingDelegateInvoker)
         {
         }
 
