@@ -1,18 +1,18 @@
 ﻿using ReportPortal.Shared.Configuration;
 using ReportPortal.Shared.Internal.Logging;
-using ReportPortal.SpecFlowPlugin;
+using ReportPortal.ReqnrollPlugin;
+using Reqnroll.Bindings;
+using Reqnroll.Infrastructure;
+using Reqnroll.Plugins;
+using Reqnroll.UnitTestProvider;
 using System;
 using System.IO;
-using TechTalk.SpecFlow.Bindings;
-using TechTalk.SpecFlow.Infrastructure;
-using TechTalk.SpecFlow.Plugins;
-using TechTalk.SpecFlow.UnitTestProvider;
 
 [assembly: RuntimePlugin(typeof(Plugin))]
-namespace ReportPortal.SpecFlowPlugin
+namespace ReportPortal.ReqnrollPlugin
 {
     /// <summary>
-    /// Registered SpecFlow plugin from configuration file.
+    /// Registered Reqnroll plugin from configuration file.
     /// </summary>
     internal class Plugin : IRuntimePlugin
     {
@@ -34,7 +34,7 @@ namespace ReportPortal.SpecFlowPlugin
             {
                 runtimePluginEvents.CustomizeGlobalDependencies += (sender, e) =>
                 {
-                    e.SpecFlowConfiguration.AdditionalStepAssemblies.Add("ReportPortal.SpecFlowPlugin");
+                    e.ReqnrollConfiguration.AdditionalStepAssemblies.Add("ReportPortal.ReqnrollPlugin");
                     e.ObjectContainer.RegisterTypeAs<SafeBindingInvoker, IBindingInvoker>();
                 };
 

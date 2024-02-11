@@ -1,8 +1,8 @@
-﻿using System;
+﻿using Reqnroll;
+using System;
 using System.Linq;
-using TechTalk.SpecFlow;
 
-namespace ReportPortal.SpecFlowPlugin.Extensions
+namespace ReportPortal.ReqnrollPlugin.Extensions
 {
     public static class StepInfoExtensions
     {

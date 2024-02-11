@@ -2,10 +2,10 @@
 using System.Collections.Concurrent;
 using ReportPortal.Shared.Internal.Logging;
 using ReportPortal.Shared.Reporter;
-using ReportPortal.SpecFlowPlugin.EventArguments;
-using TechTalk.SpecFlow;
+using ReportPortal.ReqnrollPlugin.EventArguments;
+using Reqnroll;
 
-namespace ReportPortal.SpecFlowPlugin
+namespace ReportPortal.ReqnrollPlugin
 {
     public class ReportPortalAddin
     {

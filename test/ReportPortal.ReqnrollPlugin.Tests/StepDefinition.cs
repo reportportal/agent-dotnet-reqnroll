@@ -1,8 +1,8 @@
 ﻿using ReportPortal.Shared;
+using Reqnroll;
 using System;
-using TechTalk.SpecFlow;
 
-namespace ReportPortal.SpecFlowPlugin.IntegrationTests
+namespace ReportPortal.ReqnrollPlugin.IntegrationTests
 {
     [Binding]
     public sealed class StepDefinition

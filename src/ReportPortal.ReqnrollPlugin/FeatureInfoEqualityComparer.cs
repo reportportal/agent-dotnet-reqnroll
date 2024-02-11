@@ -1,9 +1,9 @@
+using Reqnroll;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using TechTalk.SpecFlow;
 
-namespace ReportPortal.SpecFlowPlugin
+namespace ReportPortal.ReqnrollPlugin
 {
     internal class FeatureInfoEqualityComparer : IEqualityComparer<FeatureInfo>
     {

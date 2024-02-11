@@ -2,9 +2,9 @@
 using ReportPortal.Client.Abstractions;
 using ReportPortal.Client.Abstractions.Requests;
 using ReportPortal.Shared.Reporter;
-using TechTalk.SpecFlow;
+using Reqnroll;
 
-namespace ReportPortal.SpecFlowPlugin.EventArguments
+namespace ReportPortal.ReqnrollPlugin.EventArguments
 {
     public class TestItemStartedEventArgs : EventArgs
     {

@@ -2,9 +2,9 @@
 using ReportPortal.Client.Abstractions;
 using ReportPortal.Client.Abstractions.Requests;
 using ReportPortal.Shared.Reporter;
-using TechTalk.SpecFlow;
+using Reqnroll;
 
-namespace ReportPortal.SpecFlowPlugin.EventArguments
+namespace ReportPortal.ReqnrollPlugin.EventArguments
 {
     public class StepStartedEventArgs : EventArgs
     {
@@ -40,6 +40,6 @@ namespace ReportPortal.SpecFlowPlugin.EventArguments
 
         public ScenarioStepContext StepContext { get; }
 
-        public bool Canceled { get; set;}
+        public bool Canceled { get; set; }
     }
 }
