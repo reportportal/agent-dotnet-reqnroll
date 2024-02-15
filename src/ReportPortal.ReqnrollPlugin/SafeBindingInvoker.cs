@@ -12,8 +12,8 @@ namespace ReportPortal.ReqnrollPlugin
 {
     internal class SafeBindingInvoker : BindingInvoker
     {
-        public SafeBindingInvoker(ReqnrollConfiguration specFlowConfiguration, IErrorProvider errorProvider, IBindingDelegateInvoker bindingDelegateInvoker)
-            : base(specFlowConfiguration, errorProvider, bindingDelegateInvoker)
+        public SafeBindingInvoker(ReqnrollConfiguration reqnrollConfiguration, IErrorProvider errorProvider, IBindingDelegateInvoker bindingDelegateInvoker)
+            : base(reqnrollConfiguration, errorProvider, bindingDelegateInvoker)
         {
         }
 
