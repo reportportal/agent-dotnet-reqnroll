@@ -1,4 +1,4 @@
-[![Build status](https://ci.appveyor.com/api/projects/status/k9gnrmlt3yo5gl4g?svg=true)](https://ci.appveyor.com/project/nvborisenko/agent-net-specflow)
+[![CI](https://github.com/reportportal/agent-dotnet-reqnroll/actions/workflows/ci.yml/badge.svg)](https://github.com/reportportal/agent-dotnet-reqnroll/actions/workflows/ci.yml)
 
 # Installation
 Install **ReportPortal.Reqnroll** NuGet package into your project with scenarios.
