@@ -35,7 +35,7 @@ namespace ReportPortal.ReqnrollPlugin
                 runtimePluginEvents.CustomizeGlobalDependencies += (sender, e) =>
                 {
                     e.ReqnrollConfiguration.AdditionalStepAssemblies.Add("ReportPortal.ReqnrollPlugin");
-                    e.ObjectContainer.RegisterTypeAs<SafeBindingInvoker, IBindingInvoker>();
+                    e.ObjectContainer.RegisterTypeAs<SafeBindingInvoker, IAsyncBindingInvoker>();
                 };
 
                 runtimePluginEvents.CustomizeScenarioDependencies += (sender, e) =>

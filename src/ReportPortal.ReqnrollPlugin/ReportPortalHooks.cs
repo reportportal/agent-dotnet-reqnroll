@@ -83,17 +83,13 @@ namespace ReportPortal.ReqnrollPlugin
 
             ReportPortalAddin.OnInitializing(typeof(ReportPortalHooks), args);
 
-            var uri = Plugin.Config.GetValue<string>(ConfigurationPath.ServerUrl);
-            var project = Plugin.Config.GetValue<string>(ConfigurationPath.ServerProject); ;
-            var uuid = Plugin.Config.GetValue<string>(ConfigurationPath.ServerAuthenticationUuid); ;
-
             if (args.Service != null)
             {
                 _service = args.Service as Service;
             }
             else
             {
-                _service = new Service(new Uri(uri), project, uuid);
+                _service = new Shared.Reporter.Http.ClientServiceBuilder(Plugin.Config).Build();
             }
 
             return args.Config;

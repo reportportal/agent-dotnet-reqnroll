@@ -5,8 +5,8 @@ using Reqnroll.ErrorHandling;
 using Reqnroll.Infrastructure;
 using Reqnroll.Tracing;
 using System;
-using System.Diagnostics;
 using System.Reflection;
+using System.Threading.Tasks;
 
 namespace ReportPortal.ReqnrollPlugin
 {
@@ -17,18 +17,13 @@ namespace ReportPortal.ReqnrollPlugin
         {
         }
 
-        public override object InvokeBinding(IBinding binding, IContextManager contextManager, object[] arguments,
-            ITestTracer testTracer, out TimeSpan duration)
+        public override async Task<object> InvokeBindingAsync(IBinding binding, IContextManager contextManager, object[] arguments, ITestTracer testTracer, DurationHolder durationHolder)
         {
             object result = null;
 
-            var stopwatch = new Stopwatch();
-            stopwatch.Start();
-
             try
             {
-                result = base.InvokeBinding(binding, contextManager, arguments,
-                    testTracer, out duration);
+                result = await base.InvokeBindingAsync(binding, contextManager, arguments, testTracer, durationHolder);
             }
             catch (Exception ex)
             {
@@ -49,19 +44,8 @@ namespace ReportPortal.ReqnrollPlugin
                     || hookBinding.HookType == HookType.AfterScenario
                     || hookBinding.HookType == HookType.AfterScenarioBlock)
                 {
-                    stopwatch.Stop();
-
-                    duration = stopwatch.Elapsed;
-
-                    testTracer.TraceError(ex, duration);
                     SetTestError(contextManager.ScenarioContext, ex);
                 }
-            }
-            finally
-            {
-                stopwatch.Stop();
-
-                duration = stopwatch.Elapsed;
             }
 
             return result;

@@ -16,6 +16,13 @@ namespace ReportPortal.ReqnrollPlugin.LogHandler
     {
         private readonly ITraceLogger _traceLogger = TraceLogManager.Instance.GetLogger<ContextAwareLogHandler>();
 
+        private readonly Dictionary<LogScopeStatus, Status> _nestedStepStatusMap = new Dictionary<LogScopeStatus, Status> {
+            { LogScopeStatus.InProgress, Status.InProgress },
+            { LogScopeStatus.Passed, Status.Passed },
+            { LogScopeStatus.Failed, Status.Failed },
+            { LogScopeStatus.Skipped,Status.Skipped }
+        };
+
         public void Initialize(ICommandsSource commandsSource)
         {
             commandsSource.OnBeginLogScopeCommand += CommandsSource_OnBeginLogScopeCommand;
@@ -170,12 +177,5 @@ namespace ReportPortal.ReqnrollPlugin.LogHandler
 
             return testReporter;
         }
-
-        private Dictionary<LogScopeStatus, Status> _nestedStepStatusMap = new Dictionary<LogScopeStatus, Status> {
-            { LogScopeStatus.InProgress, Status.InProgress },
-            { LogScopeStatus.Passed, Status.Passed },
-            { LogScopeStatus.Failed, Status.Failed },
-            { LogScopeStatus.Skipped,Status.Skipped }
-        };
     }
 }
