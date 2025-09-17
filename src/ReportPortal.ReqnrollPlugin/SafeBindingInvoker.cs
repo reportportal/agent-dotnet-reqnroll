@@ -1,5 +1,6 @@
 ﻿using Reqnroll;
 using Reqnroll.Bindings;
+using Reqnroll.BoDi;
 using Reqnroll.Configuration;
 using Reqnroll.ErrorHandling;
 using Reqnroll.Infrastructure;
@@ -12,8 +13,8 @@ namespace ReportPortal.ReqnrollPlugin
 {
     internal class SafeBindingInvoker : BindingInvoker
     {
-        public SafeBindingInvoker(ReqnrollConfiguration reqnrollConfiguration, IErrorProvider errorProvider, IBindingDelegateInvoker bindingDelegateInvoker)
-            : base(reqnrollConfiguration, errorProvider, bindingDelegateInvoker)
+        public SafeBindingInvoker(ReqnrollConfiguration reqnrollConfiguration, IErrorProvider errorProvider, IBindingDelegateInvoker bindingDelegateInvoker, IObjectContainer objectContainer)
+            : base(reqnrollConfiguration, errorProvider, bindingDelegateInvoker, objectContainer)
         {
         }
 
