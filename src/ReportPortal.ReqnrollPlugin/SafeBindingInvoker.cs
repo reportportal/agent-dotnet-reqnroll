@@ -1,7 +1,7 @@
 ﻿using Reqnroll;
 using Reqnroll.Bindings;
-using Reqnroll.BoDi;
 using Reqnroll.Configuration;
+using Reqnroll.EnvironmentAccess;
 using Reqnroll.ErrorHandling;
 using Reqnroll.Infrastructure;
 using Reqnroll.Tracing;
@@ -13,8 +13,8 @@ namespace ReportPortal.ReqnrollPlugin
 {
     internal class SafeBindingInvoker : BindingInvoker
     {
-        public SafeBindingInvoker(ReqnrollConfiguration reqnrollConfiguration, IErrorProvider errorProvider, IBindingDelegateInvoker bindingDelegateInvoker, IObjectContainer objectContainer)
-            : base(reqnrollConfiguration, errorProvider, bindingDelegateInvoker, objectContainer)
+        public SafeBindingInvoker(ReqnrollConfiguration reqnrollConfiguration, IErrorProvider errorProvider, IBindingDelegateInvoker bindingDelegateInvoker, IEnvironmentOptions environmentOptions)
+            : base(reqnrollConfiguration, errorProvider, bindingDelegateInvoker, environmentOptions)
         {
         }
 
@@ -37,8 +37,7 @@ namespace ReportPortal.ReqnrollPlugin
 
                 var hookBinding = binding as IHookBinding;
 
-                if (hookBinding.HookType == HookType.BeforeScenario
-                    || hookBinding.HookType == HookType.BeforeScenarioBlock
+                if (hookBinding.HookType == HookType.BeforeScenarioBlock
                     || hookBinding.HookType == HookType.BeforeScenario
                     || hookBinding.HookType == HookType.BeforeStep
                     || hookBinding.HookType == HookType.AfterStep
